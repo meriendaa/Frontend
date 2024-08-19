@@ -2,15 +2,17 @@
 	<div class="container d-flex justify-content-center align-items-center vh-100">
         <div class="card p-4 shadow-sm" style="max-width: 400px; width: 100%;">
         <h3 class="text-center mb-4">Login</h3>
+        <form @submit.prevent="login">
             <div class="mb-3">
                 <label for="user" class="form-label">User</label>
-                <input v-model="mail" type="user" class="form-control" id="user" placeholder="Enter your user">
+                <input v-model="user" type="user" class="form-control" id="user" placeholder="Enter your user">
             </div>
             <div class="mb-3">
                 <label for="password" class="form-label">Password</label>
                 <input v-model="psw" type="password" class="form-control" id="password" placeholder="Enter your password">
             </div>
-            <button @click="test" type="submit" class="btn btn-primary w-100">Login</button>
+            <button type="submit" class="btn btn-primary w-100">Login</button>
+            </form>
             <div class="mt-3 text-center">
                 <router-link to="/forgotps">Forgot your password?</router-link>
             </div>
@@ -23,12 +25,49 @@
     import { ref } from 'vue';
     import { useRouter } from 'vue-router';
 
-    const mail = ref();
+    const user = ref();
     const psw = ref();
-    function test()
+    const router = useRouter();
+
+    async function login()
     {
-        console.log(mail.value);
+        console.log(user.value);
         console.log(psw.value);
+
+        // try
+        // {
+        //     const response = await fetch('localhost:5432/login_user/',
+        //     {
+        //         method: 'POST',
+        //         headers:
+        //         {
+        //             'Content-Type' : 'aplication/json',
+        //         },
+        //         body: JSON.stringify(
+        //             {
+        //                 user: user.value,
+        //                 password: psw.value,
+        //             }),
+        //     })
+        // if (!response.ok)
+        //     throw new Error('Request Error');
+        // const data = await response.json();
+        // if (data.status === 'OK')
+        // {
+        //     console.log('Authentication success');
+        //     router.push('/about');
+        // }
+        // else 
+        // {
+        //     console.error('Authentication Error:', data.message);
+        //     alert('Invalid User or Password');
+        // }
+        // }
+        // catch
+        // {
+        //     console.error('Authentication Error:', error);
+        //     alert('Request error');
+        // }
     }
     
 </script>
