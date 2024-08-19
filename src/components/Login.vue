@@ -5,11 +5,11 @@
         <form @submit.prevent="login">
             <div class="mb-3">
                 <label for="user" class="form-label">User</label>
-                <input v-model="user" type="user" class="form-control" id="user" placeholder="Enter your user">
+                <input v-model="user" type="user" class="form-control" id="user" placeholder="Enter your user" required>
             </div>
             <div class="mb-3">
                 <label for="password" class="form-label">Password</label>
-                <input v-model="psw" type="password" class="form-control" id="password" placeholder="Enter your password">
+                <input v-model="psw" type="password" class="form-control" id="password" placeholder="Enter your password" required>
             </div>
             <button type="submit" class="btn btn-primary w-100">Login</button>
             </form>
