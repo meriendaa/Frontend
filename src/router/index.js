@@ -3,6 +3,7 @@ import Home from '../components/Home.vue'
 import About from '../components/About.vue'
 import Login from '../components/Login.vue'
 import Forgotps from '../components/Forgotps.vue'
+import Register from '../components/Register.vue'
 
 const routes = [
   {
@@ -24,6 +25,11 @@ const routes = [
     path: '/forgotps',
     name: 'Forgotps',
     component: Forgotps
+  },
+  {
+    path: '/register',
+    name: 'Register',
+    component: Register
   },
 
 ]
