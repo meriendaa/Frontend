@@ -38,6 +38,40 @@
         console.log(user.value);
         console.log(psw.value);
 
+        // try
+        // {
+        //     const response = await fetch('localhost:8000/user/login_user/',
+        //     {
+        //         method: 'POST',
+        //         headers:
+        //         {
+        //             'Content-Type' : 'aplication/json',
+        //         },
+        //         body: JSON.stringify(
+        //             {
+        //                 user: user.value,
+        //                 password: psw.value,
+        //             }),
+        //     })
+        // if (!response.ok)
+        //     throw new Error('Request Error');
+        // const data = await response.json();
+        // if (data.status === 'OK')
+        // {
+        //     console.log('Authentication success');
+        //     router.push('/about');
+        // }
+        // else 
+        // {
+        //     console.error('Authentication Error:', data.message);
+        //     alert('Invalid User or Password');
+        // }
+        // }
+        // catch
+        // {
+        //     console.error('Authentication Error:', error);
+        //     alert('Request error');
+        // }
     }
     
 </script>
